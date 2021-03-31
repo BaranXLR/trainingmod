@@ -29,7 +29,7 @@ public class FirstBlockContainer extends Container{
 	private TileEntity tileEntity;
 	private PlayerEntity playerEntity;
 	private IItemHandler playerInventory;
-    protected IIntArray fields;
+	protected IIntArray fields;
 	
     public FirstBlockContainer(int windowId, World world, BlockPos pos, PlayerInventory playerInventory, PlayerEntity player) {
     	super(Registration.FIRSTBLOCK_CONTAINER.get(), windowId);
