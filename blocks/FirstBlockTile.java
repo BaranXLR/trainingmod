@@ -37,7 +37,6 @@ public class FirstBlockTile extends TileEntity implements ITickableTileEntity{
     private LazyOptional<IEnergyStorage> energy = LazyOptional.of(() -> energyStorage);
     
     private int counter;
-    private int test;
 	
 	public FirstBlockTile() {
 		super(FIRSTBLOCK_TILE.get());
@@ -71,7 +70,6 @@ public class FirstBlockTile extends TileEntity implements ITickableTileEntity{
 			world.setBlockState(pos,blockState.with(BlockStateProperties.POWERED, counter > 0),
 					Constants.BlockFlags.NOTIFY_NEIGHBORS + Constants.BlockFlags.BLOCK_UPDATE);
 		}
-		test++;
 		sendOutPower();
 	}
 
@@ -106,7 +104,7 @@ public class FirstBlockTile extends TileEntity implements ITickableTileEntity{
         public int get(int index) {
             switch (index) {
                 case 0:
-                    return FirstBlockTile.this.test;
+                    return FirstBlockTile.this.counter;
                 case 1:
                 	return FirstBlockTile.this.energyStorage.getEnergyStored();
                 default:
